@@ -12,6 +12,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState>{
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async*{
     if(event is LogginButtonPressed){
+      yield LoginLoading();
        if(event.username== "jhoan" && event.password == "hehe"){
          yield SuccessLogin();
        }else{

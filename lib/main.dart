@@ -65,7 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return BlocListener<LoginBloc,LoginState>(
       child: BlocBuilder<LoginBloc,LoginState>(
         builder: (BuildContext context, state) {
-
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -95,8 +94,11 @@ class _HomeScreenState extends State<HomeScreen> {
       if(state is SuccessLogin){
         Scaffold.of(context).showSnackBar(
           SnackBar(
-            content: Text('Success'),
-            backgroundColor: Colors.red,
+            content: Text('Success',
+            style: TextStyle(
+              color: Colors.white
+            ),),
+            backgroundColor: Colors.black,
           ),
         );
       }
